@@ -131,3 +131,85 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
+body {
+  padding-top: 70px;
+}
+
+/* Выпадающее меню */
+/* Стиль для выпадающего меню */
+/* Стиль для выпадающего меню */
+/* Основное меню */
+.dropdown-menu {
+  width: 190px;
+  height: auto;
+  position: absolute;
+  top: 70px;
+  left: 0;
+  background: #1b2340;
+  padding: 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  margin-left: 20px;
+  margin-top: 20px;
+}
+
+.dropdown-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.dropdown-menu li {
+  position: relative;
+  padding: 10px 15px;
+  color: #a5a6c5;
+  font-size: 1rem;
+  cursor: pointer;
+  display: flex; /* Используем flexbox для горизонтального расположения */
+  align-items: center; /* Вертикально выравниваем элементы по центру */
+  transition: 0.3s;
+  margin-bottom: 10px; /* Отступы между пунктами */
+}
+
+/* Горизонтальная линия слева от текста */
+.dropdown-menu li .line {
+  width: 0; /* Начальная длина линии */
+  height: 3px; /* Высота линии */
+  background: #a5a6c5; /* Начальный цвет линии */
+  transition: width 0.3s, background 0.3s; /* Плавное изменение ширины и цвета */
+  margin-right: 10px; /* Отступ между линией и текстом */
+}
+
+/* При наведении увеличиваем ширину линии и добавляем градиент */
+.dropdown-menu li:hover .line {
+  width: 30px; /* Линия будет растягиваться на всю ширину элемента */
+  background: linear-gradient(
+    to right,
+    #4ade80,
+    #1b2340
+  ); /* Градиент только на линии */
+}
+
+.dropdown-menu li:hover {
+  color: #4ade80; /* Изменение цвета текста при наведении */
+}
+
+/* Логотипы после пунктов меню */
+.logos-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.logo-item {
+  color: #a5a6c5;
+  cursor: pointer;
+  transition: color 0.3s;
+  width: 20px;
+  height: 20px;
+}
+
+.logo-item:hover {
+  color: #4ade80;
+}

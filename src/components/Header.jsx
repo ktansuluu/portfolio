@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "../styles/Header.css";
 import { FiSun } from "react-icons/fi";
+import { RxCross1 } from "react-icons/rx";
 import { FaGithub, FaInstagram, FaWhatsapp, FaEnvelope } from "react-icons/fa";
 
 export default function Header() {
@@ -13,19 +14,21 @@ export default function Header() {
   return (
     <header className="header">
       <div className="container">
-        {/* Левая часть - Бургер-меню и логотип */}
         <div className="left-side">
           <div className="burger-container" onClick={toggleMenu}>
-            <div className={`burger-menu ${isMenuOpen ? "open" : ""}`}>
-              <div className="line line1"></div>
-              <div className="line line2"></div>
-              <div className="line line3"></div>
-            </div>
+            {isMenuOpen ? (
+              <RxCross1 size={25} color="#7778a4" />
+            ) : (
+              <div className="burger-menu" style={{ gap: "5px" }}>
+                <div className="line line1" style={{ height: "3px" }}></div>
+                <div className="line line2" style={{ height: "3px" }}></div>
+                <div className="line line3" style={{ height: "3px" }}></div>
+              </div>
+            )}
           </div>
           <h1 className="logo">{`{ dev.tansuluu.co }`}</h1>
         </div>
 
-        {/* Правая часть - Темная тема и резюме */}
         <div className="right-buttons">
           <div className="theme-container">
             <button className="theme-button">
@@ -36,18 +39,28 @@ export default function Header() {
         </div>
       </div>
 
-      {/* ВЫПАДАЮЩЕЕ МЕНЮ */}
       {isMenuOpen && (
         <div className="dropdown-menu">
           <ul>
-            <li>SERVICES</li>
-            <li>ABOUT</li>
-            <li>SKILLS</li>
-            <li>PROJECTS</li>
-            <li>SOLVES</li>
-            <li>CERTIFICATE</li>
-            <li>EXPERIENCE</li>
-            <li>GET IN TOUCH</li>
+            {[
+              "SERVICES",
+              "ABOUT",
+              "SKILLS",
+              "PROJECTS",
+              "SOLVES",
+              "CERTIFICATE",
+              "EXPERIENCE",
+              "GET IN TOUCH",
+            ].map((item, index) => (
+              <li
+                key={index}
+                className="menu-item"
+                style={{ fontFamily: "Roboto Condensed, sans-serif" }}
+              >
+                <span className="menu-line"></span>
+                {item}
+              </li>
+            ))}
           </ul>
 
           <div className="logos-container">
@@ -66,6 +79,9 @@ export default function Header() {
             <a href="https://wa.me/yourphonenumber" className="logo-item">
               <FaWhatsapp size={20} />
             </a>
+          </div>
+          <div className="code">
+            <ul>Coded by Tansuluu Karybekova</ul>
           </div>
         </div>
       )}

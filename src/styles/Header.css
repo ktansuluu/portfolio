@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:ital,wght@0,200..800;1,200..800&display=swap");
+
 .header {
   display: flex;
   justify-content: center;
@@ -31,6 +32,10 @@
   align-items: center;
   justify-content: center;
   border-radius: 5px;
+  transition: background-color 0.3s;
+}
+.burger-container:hover {
+  background: #283a69;
 }
 
 .burger-menu {
@@ -79,7 +84,7 @@
 }
 
 .theme-button:hover {
-  background: rgba(255, 255, 255, 0.1);
+  background: #283a69;
 }
 
 .logo {
@@ -108,7 +113,7 @@
 }
 
 .resume-button:hover {
-  background: rgba(255, 255, 255, 0.2);
+  background: #283a69;
 }
 
 .left-side {
@@ -167,7 +172,7 @@ body {
   width: 0;
   height: 3px;
   background: #a5a6c5;
-  transition: width 0.3s, background 0.3s;
+  transition: width 0.3s, background-color 0.3s;
   margin-right: 10px;
 }
 
